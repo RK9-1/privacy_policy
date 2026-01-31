@@ -1,0 +1,165 @@
+#EXTM3U
+#EXTINF:-1 tvg-id="" tvg-name="M3U PLAYLIST | RK" tvg-logo="https://i.ibb.co/r1swQjL/m3u-file-format-icon-m3u-extension-line-icon-free-vector.jpg" group-title="M3U PLAYLIST",M3U PLAYLIST
+https://m3uplaylist-plum.vercel.app/output.m3u8
+
+#EXTM3U
+
+#EXTINF:-1 tvg-logo="https://i.ibb.co/r1swQjL/m3u-file-format-icon-m3u-extension-line-icon-free-vector.jpg",CricLife 2 - Provided by RK
+#KODIPROP:inputstream.adaptive.manifest_type=mpd
+#KODIPROP:inputstream.adaptive.license_type=clearkey
+#KODIPROP:inputstream.adaptive.license_key=48bef83b4c6a3c5189b01b0126210da4:bd085230b7b09e50954fe0af111a8a9f
+https://sports-rk-ude3.onrender.com/criclife2
+
+#EXTINF:-1 tvg-logo="https://i.ibb.co/r1swQjL/m3u-file-format-icon-m3u-extension-line-icon-free-vector.jpg",WF Cricket - Provided by RK
+#KODIPROP:inputstream.adaptive.manifest_type=mpd
+#KODIPROP:inputstream.adaptive.license_type=clearkey
+#KODIPROP:inputstream.adaptive.license_key=d0f2e5c39e70c18f29bf77768a1ad89a:d6853c51fcf37a18905f0609972395d7
+https://sports-rk-ude3.onrender.com/wfcricket
+
+#EXTINF:-1 tvg-logo="https://i.ibb.co/r1swQjL/m3u-file-format-icon-m3u-extension-line-icon-free-vector.jpg",CricLife 3 - Provided by RK
+#KODIPROP:inputstream.adaptive.manifest_type=mpd
+#KODIPROP:inputstream.adaptive.license_type=clearkey
+#KODIPROP:inputstream.adaptive.license_key=4e8b5ddac5332a4e66c002b4c0f22322:d06de29b0eacb81ac6e3f325849047e8
+https://sports-rk-ude3.onrender.com/criclife3
+
+#EXTINF:-1 tvg-logo="https://i.ibb.co/r1swQjL/m3u-file-format-icon-m3u-extension-line-icon-free-vector.jpg",Star Sports Hindi - Provided by RK
+https://sports-rk-ude3.onrender.com/starhindi
+
+#EXTINF:-1 tvg-logo="https://i.ibb.co/r1swQjL/m3u-file-format-icon-m3u-extension-line-icon-free-vector.jpg",FOX Cricket 501 HD - Provided by RK
+https://sports-rk-ude3.onrender.com/foxcricket501
+
+#EXTINF:-1 tvg-logo="https://i.ibb.co/r1swQjL/m3u-file-format-icon-m3u-extension-line-icon-free-vector.jpg",Sky Sports Cricket - Provided by RK
+https://sports-rk-ude3.onrender.com/skysportscricket
+
+#EXTINF:-1 tvg-logo="https://i.ibb.co/r1swQjL/m3u-file-format-icon-m3u-extension-line-icon-free-vector.jpg",Willow Sports - Provided by RK
+#KODIPROP:inputstream.adaptive.manifest_type=mpd
+#KODIPROP:inputstream.adaptive.license_type=clearkey
+#KODIPROP:inputstream.adaptive.license_key=1779C27B9D077A3BA0C9CC1BB9A94B9F:CC5CF3B7928FB9E0A1EE6A8B566F0A8E
+https://sports-rk-ude3.onrender.com/willowsports
+
+#EXTINF:-1 tvg-logo="https://i.ibb.co/r1swQjL/m3u-file-format-icon-m3u-extension-line-icon-free-vector.jpg",Willow HQ - Provided by RK
+#KODIPROP:inputstream.adaptive.manifest_type=mpd
+#KODIPROP:inputstream.adaptive.license_type=clearkey
+#KODIPROP:inputstream.adaptive.license_key=1779c27b9d077a3ba0c9cc1bb9a94b9f:cc5cf3b7928fb9e0a1ee6a8b566f0a8e
+https://sports-rk-ude3.onrender.com/willowhq
+
+#EXTINF:-1 tvg-logo="https://i.ibb.co/r1swQjL/m3u-file-format-icon-m3u-extension-line-icon-free-vector.jpg",BPL26 FINAL 🔥 AkkaSH Go (Auto Quality) - Provided by RK
+https://sports-rk-ude3.onrender.com/bpl26akkash
+
+#EXTINF:-1 tvg-logo="https://i.ibb.co/r1swQjL/m3u-file-format-icon-m3u-extension-line-icon-free-vector.jpg",BPL26 FINAL 🔥 Tapmad (Auto Quality) - Provided by RK
+https://sports-rk-ude3.onrender.com/bpl26tapmad
+
+#EXTINF:-1 tvg-logo="https://i.ibb.co/r1swQjL/m3u-file-format-icon-m3u-extension-line-icon-free-vector.jpg",BPL Final Rajshahi vs Chattogram - Provided by RK
+#KODIPROP:inputstream.adaptive.manifest_type=mpd
+#KODIPROP:inputstream.adaptive.license_type=clearkey
+#KODIPROP:inputstream.adaptive.license_key=dd0ceebec51e7fef863f31538e69e84c:09ae5e70fee6718a85a27fb8bad1b5e0
+https://sports-rk-ude3.onrender.com/bplfinalrajschat
+
+#EXTINF:-1 tvg-logo="https://i.ibb.co/r1swQjL/m3u-file-format-icon-m3u-extension-line-icon-free-vector.jpg",Willow (Alt) - Provided by RK
+#KODIPROP:inputstream.adaptive.manifest_type=mpd
+#KODIPROP:inputstream.adaptive.license_type=clearkey
+#KODIPROP:inputstream.adaptive.license_key=7e9239c1982d984a002df3ed049d0756:1b8a17598129a3618535c8fb05f103fe
+https://sports-rk-ude3.onrender.com/willowalt
+
+#EXTINF:-1 tvg-logo="https://i.ibb.co/r1swQjL/m3u-file-format-icon-m3u-extension-line-icon-free-vector.jpg",Sony Live Event - Provided by RK
+https://sports-rk-ude3.onrender.com/sonyliveevent
+
+#EXTINF:-1 tvg-logo="https://i.ibb.co/r1swQjL/m3u-file-format-icon-m3u-extension-line-icon-free-vector.jpg",Google DAI Live Event - Provided by RK
+https://sports-rk-ude3.onrender.com/googledaievent
+
+#EXTINF:-1 tvg-logo="https://i.ibb.co/r1swQjL/m3u-file-format-icon-m3u-extension-line-icon-free-vector.jpg",Willow HQ (Backup) - Provided by RK
+#KODIPROP:inputstream.adaptive.manifest_type=mpd
+#KODIPROP:inputstream.adaptive.license_type=clearkey
+#KODIPROP:inputstream.adaptive.license_key=1779c27b9d077a3ba0c9cc1bb9a94b9f:cc5cf3b7928fb9e0a1ee6a8b566f0a8e
+https://sports-rk-ude3.onrender.com/willowhqbackup
+
+#EXTINF:-1 tvg-logo="https://i.ibb.co/r1swQjL/m3u-file-format-icon-m3u-extension-line-icon-free-vector.jpg",Cricket Live (Clearkey) - Provided by RK
+#KODIPROP:inputstream.adaptive.manifest_type=mpd
+#KODIPROP:inputstream.adaptive.license_type=clearkey
+#KODIPROP:inputstream.adaptive.license_key=77cbbe03e429a079de236f53e60839d9:c62e6a34d38065b75fc4d308fc8c3ca3
+https://sports-rk-ude3.onrender.com/cricketliveck
+
+#EXTINF:-1 tvg-logo="https://i.ibb.co/r1swQjL/m3u-file-format-icon-m3u-extension-line-icon-free-vector.jpg",Sky Sport 1 - Provided by RK
+https://sports-rk-ude3.onrender.com/skysport1
+
+#EXTINF:-1 tvg-logo="https://i.ibb.co/r1swQjL/m3u-file-format-icon-m3u-extension-line-icon-free-vector.jpg",Sky Sport 2 - Provided by RK
+https://sports-rk-ude3.onrender.com/skysport2
+
+#EXTINF:-1 tvg-logo="https://i.ibb.co/r1swQjL/m3u-file-format-icon-m3u-extension-line-icon-free-vector.jpg",Sky Sport 3 - Provided by RK
+https://sports-rk-ude3.onrender.com/skysport3
+
+#EXTINF:-1 tvg-logo="https://i.ibb.co/r1swQjL/m3u-file-format-icon-m3u-extension-line-icon-free-vector.jpg",Sky Sport 4 - Provided by RK
+https://sports-rk-ude3.onrender.com/skysport4
+
+#EXTINF:-1 tvg-logo="https://i.ibb.co/r1swQjL/m3u-file-format-icon-m3u-extension-line-icon-free-vector.jpg",Sky Sport 5 - Provided by RK
+https://sports-rk-ude3.onrender.com/skysport5
+
+#EXTINF:-1 tvg-logo="https://i.ibb.co/r1swQjL/m3u-file-format-icon-m3u-extension-line-icon-free-vector.jpg",Sky Sport 6 - Provided by RK
+https://sports-rk-ude3.onrender.com/skysport6
+
+#EXTINF:-1 tvg-logo="https://i.ibb.co/r1swQjL/m3u-file-format-icon-m3u-extension-line-icon-free-vector.jpg",Sky Sport 7 - Provided by RK
+https://sports-rk-ude3.onrender.com/skysport7
+
+#EXTINF:-1 tvg-logo="https://i.ibb.co/r1swQjL/m3u-file-format-icon-m3u-extension-line-icon-free-vector.jpg",Sky Sport 8 - Provided by RK
+https://sports-rk-ude3.onrender.com/skysport8
+
+#EXTINF:-1 tvg-logo="https://i.ibb.co/r1swQjL/m3u-file-format-icon-m3u-extension-line-icon-free-vector.jpg",Sky Sport 9 - Provided by RK
+https://sports-rk-ude3.onrender.com/skysport9
+
+#EXTINF:-1 tvg-logo="https://i.ibb.co/r1swQjL/m3u-file-format-icon-m3u-extension-line-icon-free-vector.jpg",Sky Sport Select - Provided by RK
+https://sports-rk-ude3.onrender.com/skysportselect
+
+
+#EXTINF:-1 tvg-logo="https://i.ibb.co/r1swQjL/m3u-file-format-icon-m3u-extension-line-icon-free-vector.jpg",Star Sports 1 4K - Provided by RK
+https://sports-rk-ude3.onrender.com/starsports1_4k
+
+#EXTINF:-1 tvg-logo="https://i.ibb.co/r1swQjL/m3u-file-format-icon-m3u-extension-line-icon-free-vector.jpg",Star Sports 2 4K - Provided by RK
+https://sports-rk-ude3.onrender.com/starsports2_4k
+
+#EXTINF:-1 tvg-logo="https://i.ibb.co/r1swQjL/m3u-file-format-icon-m3u-extension-line-icon-free-vector.jpg",Star Sports 2 Hindi 4K - Provided by RK
+https://sports-rk-ude3.onrender.com/starsports2hindi_4k
+
+#EXTINF:-1 tvg-logo="https://i.ibb.co/r1swQjL/m3u-file-format-icon-m3u-extension-line-icon-free-vector.jpg",Star Sports 3 4K - Provided by RK
+https://sports-rk-ude3.onrender.com/starsports3_4k
+
+#EXTINF:-1 tvg-logo="https://i.ibb.co/r1swQjL/m3u-file-format-icon-m3u-extension-line-icon-free-vector.jpg",Star Sports Select 1 4K - Provided by RK
+https://sports-rk-ude3.onrender.com/starsportsselect1_4k
+
+#EXTINF:-1 tvg-logo="https://i.ibb.co/r1swQjL/m3u-file-format-icon-m3u-extension-line-icon-free-vector.jpg",Star Sports Select 2 4K - Provided by RK
+https://sports-rk-ude3.onrender.com/starsportsselect2_4k
+
+
+#EXTINF:-1 tvg-logo="https://i.ibb.co/r1swQjL/m3u-file-format-icon-m3u-extension-line-icon-free-vector.jpg",Star Sports 1 HD - Provided by RK
+https://sports-rk-ude3.onrender.com/starsports1_hd
+
+#EXTINF:-1 tvg-logo="https://i.ibb.co/r1swQjL/m3u-file-format-icon-m3u-extension-line-icon-free-vector.jpg",Star Sports 2 HD - Provided by RK
+https://sports-rk-ude3.onrender.com/starsports2_hd
+
+#EXTINF:-1 tvg-logo="https://i.ibb.co/r1swQjL/m3u-file-format-icon-m3u-extension-line-icon-free-vector.jpg",Star Sports 1 Hindi HD - Provided by RK
+https://sports-rk-ude3.onrender.com/starsports1hindi_hd
+
+#EXTINF:-1 tvg-logo="https://i.ibb.co/r1swQjL/m3u-file-format-icon-m3u-extension-line-icon-free-vector.jpg",Star Sports Select 1 HD - Provided by RK
+https://sports-rk-ude3.onrender.com/starsportsselect1_hd
+
+#EXTINF:-1 tvg-logo="https://i.ibb.co/r1swQjL/m3u-file-format-icon-m3u-extension-line-icon-free-vector.jpg",Star Sports Select 2 HD - Provided by RK
+https://sports-rk-ude3.onrender.com/starsportsselect2_hd
+
+
+#EXTINF:-1 tvg-logo="https://i.ibb.co/r1swQjL/m3u-file-format-icon-m3u-extension-line-icon-free-vector.jpg",Star Sports 1 FHD Tamil - Provided by RK
+https://sports-rk-ude3.onrender.com/starsports1_fhdtamil
+
+#EXTINF:-1 tvg-logo="https://i.ibb.co/r1swQjL/m3u-file-format-icon-m3u-extension-line-icon-free-vector.jpg",Star Sports 1 FHD Tamil (TS) - Provided by RK
+https://sports-rk-ude3.onrender.com/starsports1_fhdtamil_ts
+
+
+#EXTINF:-1 tvg-logo="https://i.ibb.co/r1swQjL/m3u-file-format-icon-m3u-extension-line-icon-free-vector.jpg",Star Sports 1 HD (Alt) - Provided by RK
+https://sports-rk-ude3.onrender.com/starsports1_hd_alt
+
+#EXTINF:-1 tvg-logo="https://i.ibb.co/r1swQjL/m3u-file-format-icon-m3u-extension-line-icon-free-vector.jpg",Star Sports 2 HD (Alt) - Provided by RK
+https://sports-rk-ude3.onrender.com/starsports2_hd_alt
+
+#EXTINF:-1 tvg-logo="https://i.ibb.co/r1swQjL/m3u-file-format-icon-m3u-extension-line-icon-free-vector.jpg",Star Sports 3 HD (Alt) - Provided by RK
+https://sports-rk-ude3.onrender.com/starsports3_hd_alt
+
+#EXTINF:-1 tvg-logo="https://i.ibb.co/r1swQjL/m3u-file-format-icon-m3u-extension-line-icon-free-vector.jpg",Star Sports Select 1 HD (Alt) - Provided by RK
+https://sports-rk-ude3.onrender.com/starsportsselect1_hd_alt
