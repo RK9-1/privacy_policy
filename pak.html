@@ -1,182 +1,61 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html>
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Shaka Live Player — ClearKey helper</title>
+  <meta charset="utf-8">
+  <title>Live Stream - Shaka Player</title>
 
-  <!-- Shaka Player compiled (CDN) -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/shaka-player/4.3.7/shaka-player.compiled.js"></script>
 
   <style>
-    body { margin:0; background:#000; color:#eee; font-family: Arial, Helvetica, sans-serif; }
-    .wrap { max-width: 1024px; margin: 0 auto; padding: 10px; }
-    video { width:100%; height:auto; background:#000; display:block; }
-    #log { margin-top:10px; font-size:13px; white-space:pre-wrap; background:#101010; padding:10px; border-radius:6px; color:#bcd; min-height:70px; }
-    .err { color:#ff8080; }
-    .hint { color:#9fd; font-size:13px; margin-top:6px; }
-    label,input { display:block; margin:6px 0; width:100%; box-sizing:border-box; padding:8px; border-radius:6px; border:1px solid #333; background:#111; color:#eee; }
-    button { margin-top:8px; padding:10px 14px; border-radius:6px; border:none; background:#1e88e5; color:white; cursor:pointer; }
-    button:disabled { opacity:0.5; cursor:default; }
+    body {
+      margin: 0;
+      background: black;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    video {
+      width: 100%;
+      max-width: 900px;
+    }
   </style>
 </head>
 <body>
-  <div class="wrap">
-    <h2>Shaka Live Player (ClearKey auto-detect)</h2>
 
-    <label for="manifest">DASH manifest URL (paste your URL here)</label>
-    <input id="manifest" type="text" value="https://livem-d-01-icc-we.akamaized.net/variant/v1/dai-event-prd-pal-west/vcg-01-d/DASH_DASH/Live/channel(vcg-01-ch-hd-04)/manifest.mpd?vcfilter=1515fde2-060d-4124-935f-e28bd5c4bfc3|drmScheme=clearkey&drmLicense=ae7076b647133606b704d33e4cef5134:810251515584cf71216d9a2d1ebf04bb" />
-    <button id="startBtn">Load & Play</button>
+<video id="video" controls autoplay></video>
 
-    <video id="video" controls playsinline autoplay muted></video>
+<script>
+async function init() {
+  const video = document.getElementById('video');
+  const player = new shaka.Player(video);
 
-    <div id="log" aria-live="polite"></div>
-
-    <div class="hint">
-      Tips: If your browser/device doesn't support ClearKey, remove `|drmScheme=clearkey&drmLicense=...` from the URL and try again (that will attempt playback without DRM).
-      <br>Serve this file over HTTP(S) — `file://` often blocks playback.
-    </div>
-  </div>
-
-  <script>
-    // Helpers
-    function log(...args) {
-      const el = document.getElementById('log');
-      el.textContent += args.join(' ') + '\\n';
-      el.scrollTop = el.scrollHeight;
-      console.log(...args);
-    }
-    function logError(...args) {
-      const el = document.getElementById('log');
-      el.innerHTML += '<div class="err">' + args.join(' ') + '</div>\\n';
-      console.error(...args);
-    }
-
-    // Convert hex string to Uint8Array
-    function hexToUint8Array(hex) {
-      if (!hex) return new Uint8Array();
-      hex = hex.replace(/[^0-9a-fA-F]/g, '');
-      if (hex.length % 2 !== 0) hex = '0' + hex;
-      const len = hex.length / 2;
-      const out = new Uint8Array(len);
-      for (let i = 0; i < len; i++) {
-        out[i] = parseInt(hex.substr(i * 2, 2), 16);
-      }
-      return out;
-    }
-    // Convert Uint8Array to base64
-    function uint8ToBase64(u8) {
-      let s = '';
-      for (let i = 0; i < u8.length; i++) s += String.fromCharCode(u8[i]);
-      // btoa expects binary string
-      return btoa(s);
-    }
-
-    // Parse enclosed manifest for drmLicense pattern like "keyHex:keyIdHex" or "keyId:key"
-    function parseClearKeyFromUrl(url) {
-      try {
-        // Try to extract drmLicense parameter roughly (handles | and normal ? separators)
-        const marker = 'drmLicense=';
-        const idx = url.indexOf(marker);
-        if (idx === -1) return null;
-        let tail = url.substring(idx + marker.length);
-        // cut on & or space etc
-        const stop = tail.search(/[&\\s]/);
-        if (stop !== -1) tail = tail.substring(0, stop);
-        // Now tail should be something like keyHex:keyIdHex (or keyId:key)
-        const parts = tail.split(':');
-        if (parts.length !== 2) return null;
-        // decide which is key and which is keyId by lengths heuristics (key often 16/24/32 bytes hex)
-        const a = parts[0].replace(/[^0-9a-fA-F]/g, '');
-        const b = parts[1].replace(/[^0-9a-fA-F]/g, '');
-        // If first is 32+ hex chars, treat it as key
-        let keyHex, keyIdHex;
-        if (a.length >= b.length) { keyHex = a; keyIdHex = b; }
-        else { keyHex = b; keyIdHex = a; }
-        if (!keyHex || !keyIdHex) return null;
-        return { keyHex, keyIdHex };
-      } catch (e) {
-        return null;
+  // ClearKey DRM config
+  player.configure({
+    drm: {
+      clearKeys: {
+        "ae7076b647133606b704d33e4cef5134": "810251515584cf71216d9a2d1ebf04bb"
       }
     }
+  });
 
-    document.getElementById('startBtn').addEventListener('click', async () => {
-      document.getElementById('log').textContent = '';
-      const manifestUri = document.getElementById('manifest').value.trim();
-      if (!manifestUri) { logError('Paste your manifest URL first'); return; }
+  const manifestUri =
+    "https://livem-d-01-icc-we.akamaized.net/variant/v1/dai-event-prd-pal-west/vcg-01-d/DASH_DASH/Live/channel(vcg-01-ch-hd-04)/manifest.mpd?vcfilter=1515fde2-060d-4124-935f-e28bd5c4bfc3";
 
-      log('Initializing Shaka Player...');
-      // Install polyfills
-      shaka.polyfill.installAll();
-      if (!shaka.Player.isBrowserSupported()) {
-        logError('Shaka Player not supported in this browser (no MSE)');
-        // still try using native <video> if possible
-      }
+  try {
+    await player.load(manifestUri);
+    console.log("Playing...");
+  } catch (e) {
+    console.error("Error loading stream", e);
+  }
+}
 
-      const video = document.getElementById('video');
-      video.muted = true; // helps autoplay on many mobiles/STBs
-      const player = new shaka.Player(video);
+if (shaka.Player.isBrowserSupported()) {
+  init();
+} else {
+  alert("Browser not supported");
+}
+</script>
 
-      player.addEventListener('error', e => {
-        const shakaErr = e.detail;
-        logError('Shaka error:', shakaErr ? shakaErr.message || JSON.stringify(shakaErr) : e);
-      });
-
-      // Try to detect ClearKey key from URL
-      const parsed = parseClearKeyFromUrl(manifestUri);
-      if (parsed) {
-        log('Detected drmLicense in URL. Trying ClearKey injection...');
-        try {
-          const keyBytes = hexToUint8Array(parsed.keyHex);
-          const kidBytes = hexToUint8Array(parsed.keyIdHex);
-
-          const keyB64 = uint8ToBase64(keyBytes);
-          const kidB64 = uint8ToBase64(kidBytes);
-
-          // Build map: kidBase64 -> keyBase64
-          const clearKeyMap = {};
-          clearKeyMap[kidB64] = keyB64;
-
-          // Configure Shaka with clearKeys
-          player.configure({
-            drm: {
-              clearKeys: clearKeyMap
-            }
-          });
-
-          log('Injected ClearKey (base64) for keyId:', kidB64, 'key:', keyB64);
-        } catch (e) {
-          logError('Failed to convert clearkey hex -> base64:', e);
-        }
-      } else {
-        log('No drmLicense parameter found or parse failed. Will attempt to play without ClearKey injection.');
-      }
-
-      // Optional: add request filter to rewrite license or add headers if needed:
-      // player.getNetworkingEngine().registerRequestFilter((type, request) => {
-      //   if (type === shaka.net.NetworkingEngine.RequestType.LICENSE) {
-      //     // Modify request. Example: request.uris[0] = 'https://your-license-server';
-      //   }
-      // });
-
-      // Load manifest
-      try {
-        log('Loading manifest...');
-        await player.load(manifestUri);
-        log('Playback started — if video is black, check the console and log area for errors below.');
-        // Unmute after playback starts (optional)
-        setTimeout(() => {
-          try { video.muted = false; } catch (e) { /* pass */ }
-        }, 1000);
-      } catch (err) {
-        logError('Failed to load manifest:', err);
-        // Helpful troubleshooting messages:
-        log('Troubleshoot:');
-        log('- If your device/browser does NOT support ClearKey DRM, remove the drm parameters from the URL and try again (playback without DRM).');
-        log('- Ensure you host this page over HTTP(S). Many browsers block MSE/DRM on file://.');
-        log('- Check console for network/license request errors (CORS, 403, 404, etc).');
-      }
-    });
-  </script>
 </body>
-  </html>
+</html>
