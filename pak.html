@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Live Streaming with Shaka Player</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Shaka Player library -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/shaka-player/4.3.7/shaka-player.compiled.js"></script>
+
+  <style>
+    body {
+      background: #000;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      color: white;
+    }
+    video {
+      width: 100%;
+      max-width: 960px;
+      height: auto;
+      background: #000;
+    }
+  </style>
+</head>
+
+<body>
+  <video id="video" controls autoplay playsinline></video>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      // Initialize the Shaka Player
+      const video = document.getElementById('video');
+      const player = new shaka.Player(video);
+
+      player.addEventListener('error', onShakaError);
+
+      // ClearKey configuration (if needed)
+      const manifestUri = 'https://livem-d-01-icc-we.akamaized.net/variant/v1/dai-event-prd-pal-west/vcg-01-d/DASH_DASH/Live/channel(vcg-01-ch-hd-04)/manifest.mpd?vcfilter=1515fde2-060d-4124-935f-e28bd5c4bfc3|drmScheme=clearkey&drmLicense=ae7076b647133606b704d33e4cef5134:810251515584cf71216d9a2d1ebf04bb';
+
+      // Configure DRM with ClearKey if supported
+      const drmConfig = {
+        drm: {
+          clearKeys: {
+            // Replace with keys if required
+            // Example Key format: 'keyIdHex': 'keyHex'
+          }
+        }
+      };
+      player.configure(drmConfig);
+
+      // Try to load manifest
+      player.load(manifestUri).then(function () {
+        console.log('Live stream started successfully!');
+      }).catch(onShakaError);
+
+      // Error handler
+      function onShakaError(error) {
+        console.error('Shaka Error:', error);
+      }
+    });
+  </script>
+</body>
+  </html>
